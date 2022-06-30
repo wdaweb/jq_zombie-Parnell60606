@@ -1,0 +1,90 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>my little zomble</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <style>
+            #game {
+                width: 400px;
+                height: 400px;
+                background: black;
+                overflow: hidden;
+                position: relative;
+            }
+
+            #game img {
+                height: 150px;
+                position: absolute;
+            }
+
+            /* .zombie {
+            background: url(./zombieImg/1.gif);
+        } */
+        </style>
+    </head>
+
+    <body>
+        <input type="button" value="開始" id="start">
+        <p>
+            分數：<span id="text-score">0</span>分 <br>
+            剩餘：<span id="text-time">0</span>秒
+        </p>
+        <hr>
+        <div id="game"></div>
+        <script>
+            let score = 0
+        let countdown = 10  //遊戲秒數
+        let timer = 0
+
+        $('#start').click(function () {
+            // 停用按鈕 (點下後按鈕被停用)
+            $(this).attr('disabled', true)
+            // 重設 (每次點開始都重設分數)
+            score = 0
+            $('#text-score').text(score)
+            countdown = 10
+
+            $('#text-time').text(countdown)
+
+
+            // 開始遊戲
+            timer = setInterval(function () {
+                // 倒數
+                countdown--
+                $('#text-time').text(countdown)
+
+
+                const random = Math.round(Math.random() * 9)
+                if (random > 5 && $('#game .zombie').length < 5) {
+                    const top = Math.round(Math.random() * 70) + '%'
+                    const left = Math.round(Math.random() * 70) + '%'
+                    const zombie = $(`<img src"./zombieImg/1.gif" class='zomble' style='top:${top};left:${left}' >`)
+                    $('#game').append(zombie)
+                    move(zombie)
+                }
+
+
+                if (countdown <= 0) {
+                    clearInterval(timer)
+                    // 清空遊戲區域
+                    $('#game img').remove()
+                    // 重新啟用開始按鈕
+                    $('#start').attr('disabled', false)
+                    alert(`時間到，你得到${score}分`)
+                }
+
+            }, 1000)
+        }
+        )
+
+        </script>
+    </body>
+
+    </html>
