@@ -1,0 +1,111 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+    <style>
+      body {
+        background: cadetblue;
+        /* position: relative; */
+      }
+
+
+      .container {
+        width: 500px;
+        height: 500px;
+        border-radius: 50px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background: brown;
+      }
+
+      img {
+        /*   hue     0 ~ 150     麻  */
+        /*    90     -10 ~ 180    150  楓 */
+        filter: hue-rotate(150deg) saturate(100%);
+        /* background: aliceblue; */
+        width: 150px;
+      }
+
+
+
+      img:hover {
+        width: 200px;
+
+        /* filter: hue-rotate(180deg) saturate(400%); */
+      }
+    </style>
+  </head>
+
+
+
+  <body>
+
+    <!-- <img src="./image/marijuana_AI-01.svg" alt=""> -->
+
+    <div class="container">
+
+
+    </div>
+
+    <img src="./image/marijuana_AI-02.svg" class="leaf b">
+    <img src="./image/maple_AI-02.svg" class="leaf b">
+
+
+    <!-- <img src="./image/maple_AI-01.svg" style="filter: hue-rotate(50deg) saturate(20%);">
+    <img src="./image/maple_AI-02.svg" style="filter: hue-rotate(180deg) saturate(400%) brightness(0.4);">
+    <img src="./image/maple_AI-03.svg" style="filter: hue-rotate(-10deg) saturate(100%);">
+    <img src="./image/marijuana_AI-01.svg" style="filter: hue-rotate(-50deg) saturate(150%);">
+    <img src="./image/marijuana_AI-02.svg" alt="">
+    <img src="./image/marijuana_AI-03.svg" style="filter: hue-rotate(-10deg) saturate(150%);"> -->
+
+
+
+
+
+
+
+
+    <script>
+      console.log ($('h1').text())
+      // $('.container').load('./image/marijuana_AI-01.svg')
+      // $('.st0').css('fill','#ffffff')
+
+      $('.container').html('<img src="./image/marijuana_AI-01.svg" style="filter: hue-rotate(-50deg) saturate(150%);" class="leaf a">')
+
+
+      // $('.leaf').css('display', 'none')
+
+
+      // $('.card').eq(i).find('.card-front').css('background-image', `url(./image/card-${num}.png)`)
+
+
+
+  // $('.container').load('./image/marijuana_AI-01.svg')
+  // $.get('./image/marijuana_AI-01.svg').css('fill','#000000')
+  
+
+   
+    </script>
+
+
+    <!-- 
+  架構
+
+  
+ -->
+
+  </body>
+
+  </html>
